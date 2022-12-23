@@ -1,0 +1,190 @@
+/* Coded By : Abdelrahman Elrefai Tawfik */
+/* 17th Newbie Challenge -- FrontEnd Mentor */
+
+/* ********* */
+/* Colors */
+
+:root {
+    /* ### Primary
+    #### Text */
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+
+    /* #### Gradient
+    Background gradient: */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+
+    /* ### Neutral
+    #### Text */
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /* #### Dividers */
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+/* ********* */
+/* Fonts */
+
+@font-face {
+    font-family: 'Kumbh Sans';
+    src: url(./font/KumbhSans-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'Kumbh Sans Bold';
+    src: url(./font/static/KumbhSans-Bold.ttf);
+}
+
+/* ******** */
+/* General Rules */
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family:
+    'Kumbh Sans',
+    'Segoe UI',
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+    background-color: var(--soft-violet);
+    background-image: linear-gradient(to bottom , hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    font-size: 12px;
+}
+
+/* ********** */
+/* Hero Image */
+.accordion {
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.accordion .container {
+    position: relative;
+    padding: 45px 20px;
+    width:320px;
+    border-radius: 20px;
+    background-color: hsl(0, 0%, 100%);
+}
+.accordion .hero-image img.hero-mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-14.5%,-60%);
+    width: 250px;
+
+}
+
+.accordion .hero-image img.hero-desktop {
+    display: none;
+}
+
+.box-desktop {
+    display: none;
+}
+/* ********** */
+/* Card Title */
+.accordion h1.card-title {
+    font-family:
+    'Kumbh Sans Bold',
+    'Segoe UI',
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+/* ********** */
+/* Qs & As */
+.line {
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin:10px 0;
+    background-color: var(--light-grayish-blue);
+
+}
+/* ********** */
+/* Qs & As */
+.accordion .question a {
+    justify-self: end;
+}
+.accordion .question {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    
+    width: 100%;
+    padding:10px 0;
+    overflow: hidden;
+}
+.accordion .question h2 {
+    font-weight: 400;
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+.accordion .answer {
+    display: none;
+    opacity: .8;
+    transform: rotate(0);
+    transition: all .4s ease-in-out;
+}
+@media (min-width:992px) {
+    /* The Container Div */
+
+    .accordion .container{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 850px;
+        padding:45px 20px;
+        padding-left: 0;
+    }
+    /* Hero-image */
+    .accordion .hero-image {
+        overflow: hidden;
+        margin: 0;
+    }
+    .accordion .hero-image img.hero-mobile {
+        display: none;
+    }
+    .accordion .hero-image img.hero-desktop{
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(-15.5%,0);
+
+    }
+    .box-desktop {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        transform: translate(-50%,100%);
+    }
+    /* Title */
+    .accordion h1.card-title {
+        margin-top: 0;
+        margin-bottom: 30px;
+        text-align: start;
+        font-size: 32px;
+    }
+}
+.answer ~ h2 {
+    font-weight: "900";
+}
